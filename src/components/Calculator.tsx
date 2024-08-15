@@ -28,9 +28,9 @@ const Calculator: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-teal-100 flex-col p-10">
+    <div className="flex items-center justify-center min-h-screen bg-[#C5E4E7] flex-col p-10 ">
       <div>
-        <h2 className="text-3xl text-teal-400 italic pb-3">
+        <h2 className="text-3xl text-teal-400 mono pb-5">
           SPLI <br />
           TTER
         </h2>
@@ -38,12 +38,12 @@ const Calculator: React.FC = () => {
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-xl font-semibold mb-4">Bill</h2>
+            <h2 className="text-xl font-semibold mb-4 mono">Bill</h2>
             <input
               type="number"
               value={bill}
               onChange={handleBillChange}
-              className="w-full p-2 rounded-lg border-2 border-gray-200 mb-4"
+              className="w-full p-2 rounded-lg border-2 bg-[#C5E4E7] mono  mb-4"
             />
             <h2 className="text-xl font-semibold mb-4">Select Tip %</h2>
             <div className="grid grid-cols-3 gap-4">
@@ -52,7 +52,7 @@ const Calculator: React.FC = () => {
                   key={value}
                   onClick={() => handleTipChange(value)}
                   className={`p-2 rounded-lg ${
-                    tip === value ? "bg-teal-500 text-white" : "bg-gray-200"
+                    tip === value ? "bg-teal-500 text-white" : "bg-[#00474B] mono"
                   }`}
                 >
                   {value}%
@@ -62,7 +62,7 @@ const Calculator: React.FC = () => {
                 type="number"
                 placeholder="Custom"
                 onChange={(e) => handleTipChange(Number(e.target.value))}
-                className="w-full p-2 rounded-lg border-2 border-gray-200"
+                className="w-full p-2 rounded-lg border-2 bg-[#C5E4E7] mono"
               />
             </div>
             <h2 className="text-xl font-semibold mb-4 mt-4">
@@ -72,18 +72,18 @@ const Calculator: React.FC = () => {
               type="number"
               value={people}
               onChange={handlePeopleChange}
-              className="w-full p-2 rounded-lg border-2 border-gray-200"
+              className="w-full p-2 rounded-lg border-2 bg-[#C5E4E7] mono"
             />
           </div>
-          <div className="bg-teal-800 text-white p-8 rounded-lg">
-            <h2 className="text-lg mb-4">
-              Tip Amount <span className="text-teal-300">/ person</span>
+          <div className="bg-teal-800 text-white p-8 rounded-lg mono">
+            <h2 className="text-lg mb-4 mono" >
+              Tip Amount <span className="text-teal-300 mono">/ person</span>
             </h2>
-            <p className="text-4xl mb-8">${calculateTipAmount().toFixed(2)}</p>
-            <h2 className="text-lg mb-4">
-              Total <span className="text-teal-300">/ person</span>
+            <p className="text-4xl mb-8 mono">${calculateTipAmount().toFixed(2)}</p>
+            <h2 className="text-lg mb-4 mono">
+              Total <span className="text-teal-300 mono">/ person</span>
             </h2>
-            <p className="text-4xl mb-8">
+            <p className="text-4xl mb-8 mono">
               ${calculateTotalAmount().toFixed(2)}
             </p>
             <button
@@ -92,7 +92,7 @@ const Calculator: React.FC = () => {
                 setTip(0);
                 setPeople(1);
               }}
-              className="w-full p-2 bg-teal-500 rounded-lg"
+              className="w-full p-2 bg-teal-500 rounded-lg mono"
             >
               RESET
             </button>
